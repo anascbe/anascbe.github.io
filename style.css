@@ -804,6 +804,10 @@ select{
   display: inline-flex;
 }
 
+.hidden{
+  display: none;
+}
+
 .h-10{
   height: 2.5rem;
 }
@@ -942,6 +946,10 @@ select{
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-screen{
+  width: 100vw;
 }
 
 .max-w-lg{
@@ -1801,6 +1809,18 @@ select{
     margin-top: 4rem;
   }
 
+  .sm\:block{
+    display: block;
+  }
+
+  .sm\:flex{
+    display: flex;
+  }
+
+  .sm\:hidden{
+    display: none;
+  }
+
   .sm\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1822,6 +1842,28 @@ select{
 
   .md\:-ml-16{
     margin-left: -4rem;
+  }
+
+  .md\:ml-8{
+    margin-left: 2rem;
+  }
+
+  .md\:block{
+    display: block;
+  }
+
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -1872,6 +1914,10 @@ select{
     display: grid;
   }
 
+  .lg\:hidden{
+    display: none;
+  }
+
   .lg\:h-full{
     height: 100%;
   }
@@ -1918,5 +1964,11 @@ select{
   .lg\:py-32{
     padding-top: 8rem;
     padding-bottom: 8rem;
+  }
+}
+
+@media (min-width: 1536px){
+  .\32xl\:hidden{
+    display: none;
   }
 }
