@@ -1,94 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/img/anas.png">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <title>Mohammed Anas</title>
-</head>
-<body class=" antialiased font-manrope bg-[url('/img/bg-pattern.svg')] my-4 mx-16">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <title>Document</title>
+    </head>
 
- <nav class="sticky top-6  z-50 flex items-center justify-between text-white bg-slate-50 bg-opacity-5  backdrop-blur-md rounded-2xl">
+    <body class="bg-gradient-to-r from-indigo-800 via-purple-700 to-purple-800" x-data="mainApp()">
+        <div class="w-[80%] mx-auto relative">
+        <div class="mx-auto relative">
 
-  <a href="#">
-  <div class="text-sm font-extrabold my-2 mx-2 p-2 flex items-center gap-2  rounded-2xl hover:bg-slate-50 hover:bg-opacity-5">
+            <!-- Intro-->
+            <div id="hero" class="h-screen relative z-10 transition-all ease-in-out delay-400 duration-300">
+                <div class="flex flex-col h-full justify-center">
+                    <div id="herotitle">
+                    <img class="mt-6" src="Chargebee-logo-mark.png" width="64px" height="64px">    
+                    <p class="mt-4 text-sm font-regular opacity-100 text-white" x-show="welcometext">Welcome</p>
+                    <h1 class=" text-4xl font-semibold text-white">Rebecca Nicholas!</h1>
+                    </div>
+                    <p class="mt-2 text-base font-light opacity-70 text-white" x-show="beginButton">Thank you for your interest in Chargebee! We’d like to get to know you better. </p>
+                    <p class="mt-2 text-base font-light opacity-70 text-white" x-show="beginButton">It’ll only take a couple of minutes.</p>
+                </div>
+                
+            </div>
+
+            <div class="absolute z-50 bottom-8 transition-all w-full md:w-auto" id="letsbegin" x-show="beginButton" x-transition:enter="transition ease-in duration-300">
+                    <button type="button" @click="onClickBegin" class="bg-white py-4 px-20 rounded-md text-black">Let's begin!</button>
+            </div>
+
+             <!-- Section that hosts questions-->   
+            <div id="questions" class="p-8 rounded-t-2xl bg-white h-screen overflow-y-auto fixed w-[80%] " style="scroll-behavior: smooth;">
+
+                <div x-show="survey">
+                <!--Question 1 -->
+                <div id="q-1">
+                <p class="text-xs text-gray-500 uppercase">QUESTION 1 out of 5</p>
+                <h1 class="mb-4 text-xl text-gray-700 font-semibold pt-2">How actively are you looking out for opportunities?</h1>
+                <img src="images/illustration-1.svg" style="max-width:172px" class="pt-4">
+                
+                
+                <label class="mt-4 mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question1 === 'q1a1'}" onclick="window.location.href='#q-2'">
+                <input type="radio" name="question1" x-model="question1"  value="q1a1" class="sr-only" >    
+                I’m just starting to see what’s out there
+                </label>
+                
+                <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question1 === 'q1a2'}" onclick="window.location.href='#q-2'">
+                <input type="radio" name="question1" x-model="question1"  value="q1a2" class="sr-only" >
+                I’m actively interviewing for different roles
+                </label>
+
+                <label class="relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question1 === 'q1a3'}" onclick="window.location.href='#q-2'">
+                <input type="radio" name="question1" x-model="question1"  value="q1a3" class="sr-only" >
+                I’m expecting an offer within the next 30 days
+                </label> 
+                
+                </div>
+
+                <!--Question 2 -->
+                <div id="q-2" class="pt-8">
+                     <p class="text-xs text-gray-500 uppercase mt-8" >QUESTION 2 out of 5</p>
+                    <h1 class="text-xl text-gray-700 font-semibold pt-2">What do you value most at this stage of your career?</h1>
+                    <div class="mb-4 pt-1 text-gray-400 mb-4">Chargebee offers competitive salary packages, as well as the benefits below.</div>
+                    <img src="images/illustration-2.svg" style="max-width:172px" class="pt-4">
+                    
+                    <label class="mt-4 mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question2 === 'q2a1'}" onclick="window.location.href='#q-3'">
+                    <input type="radio" name="question2" x-model="question2"  value="q2a1" class="sr-only" >
+                    Impact and ownership of work</label>
+                   <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question2 === 'q2a2'}" onclick="window.location.href='#q-3'">
+                    <input type="radio" name="question2" x-model="question2"  value="q2a2" class="sr-only" >
+                   Relaxed work culture</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question2 === 'q2a3'}" onclick="window.location.href='#q-3'">
+                    <input type="radio" name="question2" x-model="question2"  value="q2a3" class="sr-only" >
+                    Flexible hours and location</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question2 === 'q2a4'}" onclick="window.location.href='#q-3'">
+                    <input type="radio" name="question2" x-model="question2"  value="q2a4" class="sr-only" >
+                    Opportunities for career growth</label>
+                </div>
+
+                <!--Question 3 -->
+                <div id="q-3" class="pt-8">
+                    <p class="text-xs text-gray-500 uppercase mt-8">QUESTION 3 out of 5</p>
+                    <h1 class="mb-4 text-xl text-gray-700 font-semibold pt-2">Which of these showcases your skills best?</h1>
+                    <img src="images/illustration-3.svg" style="max-width:172px" class="pt-4">
+                    
+                    <label class="mt-4 mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question3 === 'q3a1'}" onclick="window.location.href='#q-4'">
+                    <input type="radio" name="question3" x-model="question3"  value="q3a1" class="sr-only" >
+                    Portfolio website (please specify)</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question3 === 'q3a2'}" onclick="window.location.href='#q-4'">
+                    <input type="radio" name="question3" x-model="question3"  value="q3a2" class="sr-only" >
+                    Project presentation on Zoom</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question3 === 'q3a3'}" onclick="window.location.href='#q-4'">
+                    <input type="radio" name="question3" x-model="question3"  value="q3a3" class="sr-only" >        
+                    Take-home test</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question3 === 'q3a4'}" onclick="window.location.href='#q-4'">
+                    <input type="radio" name="question3" x-model="question3"  value="q3a4" class="sr-only" >      
+                    LinkedIn profile</label>
+                </div>
+
+                <!--Question 4 -->
+                <div id="q-4" class="pt-8">
+                    <p class="text-xs text-gray-500 uppercase mt-8">QUESTION 4 out of 5</p>
+                    <h1 class="mb-4 text-xl text-gray-700 font-semibold pt-2">In your day-to-day work, which of these fits you best?</h1>
+                    <img src="images/illustration-4.svg" style="max-width:172px" class="pt-4">
+                    
+                    <label class="mt-4 mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question4 === 'q4a1'}" onclick="window.location.href='#q-5'">
+                    <input type="radio" name="question4" x-model="question4"  value="q4a1" class="sr-only" >
+                    Mechanic</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question4 === 'q4a2'}" onclick="window.location.href='#q-5'">
+                    <input type="radio" name="question4" x-model="question4"  value="q4a2" class="sr-only" >    
+                    Artist</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question4 === 'q4a3'}" onclick="window.location.href='#q-5'">
+                    <input type="radio" name="question4" x-model="question4"  value="q4a3" class="sr-only" >        
+                    Researcher</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question4 === 'q4a4'}" onclick="window.location.href='#q-5'">
+                    <input type="radio" name="question4" x-model="question4"  value="q4a4" class="sr-only" >            
+                    Visionary</label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question4 === 'q4a5'}" onclick="window.location.href='#q-5'">
+                    <input type="radio" name="question4" x-model="question4"  value="q4a5" class="sr-only" >                
+                    Jack of all trades</label>
+                </div>
+
+                <!--Question 5 -->
+                <div id="q-5" class="pt-8">
+                    <p class="text-xs text-gray-500 uppercase mt-8">QUESTION 5 out of 5</p>
+                    <h1 class="text-xl text-gray-700 font-semibold pt-2">What are your ‘non-designer’ competencies?</h1>
+                    <div class="mb-4 pt-1 text-gray-400 mb-4">Select all that apply</div>
+                    <img src="images/illustration-5.svg" style="max-width:172px" class="pt-4">
+                    <label class="mt-4 mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question5_1 === 'q5a1'}">
+                        <input type="checkbox" id="non-designer-1" name="nondesigner1[]" value="stakeholders" x-model="question5_1" value="q5a1">
+                        <label for="non-designer-1"> Presenting to stakeholders</label><br>
+                    </label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question5_2 === 'q5a2'}">
+                        <input type="checkbox" id="non-designer-2" name="nondesigner2[]" value="facilitate" x-model="question5_2" value="q5a2">
+                        <label for="non-designer-2"> Facilitating workshops or learning events</label><br>
+                    </label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question5_3 === 'q5a3'}">
+                        <input type="checkbox" id="non-designer-3" name="nondesigner3[]" value="uxr" x-model="question5_3" value="q5a3">
+                        <label for="non-designer-3"> Conducting user research</label><br>
+                    </label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question5_4 === 'q5a4'}">
+                        <input type="checkbox" id="non-designer-4" name="nondesigner4[]" value="workshop" x-model="question5_4" value="q5a4">
+                        <label for="non-designer-4"> Planning and running a design workshop</label><br>
+                    </label>
+                    <label class="mb-4 relative block bg-white  border rounded-lg g border-gray-200 px-6 py-4 cursor-pointer focus:outline-none hover:bg-purple-50" :class="{'bg-purple-100 ring-1 ring-purple-800': question5_5 === 'q5a5'}">
+                        <input type="checkbox" id="non-designer-5" name="nondesigner5[]" value="team" x-model="question5_5" value="q5a5">
+                        <label for="non-designer-5"> Managing projects as a team lead</label><br>
+                    </label>
+                </div>
+
+                <div class=" z-8 bottom-2 justify-stretch" x-show="submitbutton" id="but-1" >
+                    <button type="button" class=" w-full mt-4 inline-flex items-center justify-center px-24 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" @click="onClickSubmit()">
+                    Submit
+                    </button>
+                </div>
+
+                </div>
+
+                <!--<div class="fixed z-10 bottom-12 w-44" x-show="submitbutton"  x-transition>
+                <button type="button" class=" w-full mt-4 inline-flex items-center px-24 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" @click="onClickSubmit()">
+                Submit
+                </button>
+                </div>-->
+
+                <div id="nextsteps" x-show="thanks" x-transition.duration.500ms x-transition.delay.300ms>
+        <h1 class="font-semibold text-xl">Thanks for applying!</h1>
+        <p class="mt-2 text-base font-light opacity-70" style="max-width: 556px;" >You will be one click away from tracking your application any time. Good luck and hope to see you soon.</p>
+        <button type="button" class="mt-4 inline-flex items-center px-24 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <!-- Heroicon name: solid/mail -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+              </svg>
+            Add to Home Screen
+          </button>
+
+          <hr class="hr mt-8 "/>
+
+          <h1 class="font-semibold mt-8 ">Here are the next steps</h1>
+
+            <div class="mt-8 ">
+                <nav aria-label="Progress">
+                <ol role="list" class="overflow-hidden">
+                <li class="relative pb-10">
+                    <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-green-600" aria-hidden="true"></div>
+                    <!-- Complete Step -->
+                    <a href="#" class="relative flex items-start group">
+                    <span class="h-9 flex items-center">
+                        <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-green-600 rounded-full group-hover:bg-green-800">
+                        <!-- Heroicon name: solid/check -->
+                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        </span>
+                    </span>
+                    <span class="ml-4 min-w-0 flex flex-col">
+                        <span class="text-xs font-semibold tracking-wide uppercase">Application submitted</span>
+                        <span class="text-sm text-gray-500">Done</span>
+                    </span>
+                    </a>
+                </li>
+            
+                <li class="relative pb-10">
+                    <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
+                    <!-- Current Step -->
+                    <a href="#" class="relative flex items-start group" aria-current="step">
+                    <span class="h-9 flex items-center" aria-hidden="true">
+                        <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-indigo-600 rounded-full">
+                        <span class="h-2.5 w-2.5 bg-indigo-600 rounded-full"></span>
+                        </span>
+                    </span>
+                    <span class="ml-4 min-w-0 flex flex-col">
+                        <span class="text-xs font-semibold tracking-wide uppercase text-indigo-600">Review by team</span>
+                        <span class="text-sm text-gray-500">Within 2-3 business days</span>
+                    </span>
+                    </a>
+                </li>
+            
+                <li class="relative pb-10">
+                    <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
+                    <!-- Upcoming Step -->
+                    <a href="#" class="relative flex items-start group">
+                    <span class="h-9 flex items-center" aria-hidden="true">
+                        <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                        <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
+                        </span>
+                    </span>
+                    <span class="ml-4 min-w-0 flex flex-col">
+                        <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Introductary Call</span>
+                        <span class="text-sm text-gray-500">30 minutes</span>
+                    </span>
+                    </a>
+                </li>
+            
+                <li class="relative pb-10">
+                    <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
+                    <!-- Upcoming Step -->
+                    <a href="#" class="relative flex items-start group">
+                    <span class="h-9 flex items-center" aria-hidden="true">
+                        <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                        <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
+                        </span>
+                    </span>
+                    <span class="ml-4 min-w-0 flex flex-col">
+                        <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Portfolio Review</span>
+                        <span class="text-sm text-gray-500">60 minutes</span>
+                    </span>
+                    </a>
+                </li>
+                
+                <li class="relative pb-10">
+                    <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
+                    <!-- Upcoming Step -->
+                    <a href="#" class="relative flex items-start group">
+                    <span class="h-9 flex items-center" aria-hidden="true">
+                        <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                        <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
+                        </span>
+                    </span>
+                    <span class="ml-4 min-w-0 flex flex-col">
+                        <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Workshop</span>
+                        <span class="text-sm text-gray-500">90 minutes</span>
+                    </span>
+                    </a>
+                </li>
+
+                <li class="relative">
+                    <!-- Upcoming Step -->
+                    <a href="#" class="relative flex items-start group">
+                    <span class="h-9 flex items-center" aria-hidden="true">
+                        <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                        <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
+                        </span>
+                    </span>
+                    <span class="ml-4 min-w-0 flex flex-col">
+                        
+                        <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Offer</span>
+                        <span class="text-sm text-gray-500">Within two weeks of intro call</span>
+                    </span>
+                    </a>
+                </li>
+
+                
+                </ol>
+                </nav>
+             </div>
+            </div>
+            </div>
+
+           
 
 
-    <img src="/img/anas.png" alt="" class="h-10 border-2 border-slate-50 rounded-full border-opacity-25 ">
-
-    <div>
-    <h1 class="">Mohammed Anas</h1>
-    <p class="text-opacity-50 text-white font-semibold">Product Designer</p></div>
-  </div> </a>
-
-  
-
-  <div class="hidden md:flex justify-between text-sm font-medium my-4 mx-6 gap-6 text-opacity-100 text-white">
-
-   
-      <a href="https://dribbble.com/anasca" target="_blank">
-        <div class="hover:text-opacity-50 text-white">
-          <h1>Shots</h1>
-        </div></a>
-
-      <a href="https://medium.com/@anas.cbe" target="_blank">
-        <div class="hover:text-opacity-50 text-white">
-          <h1>Writings</h1>
-        </div></a>
-
-      <a href="https://drive.google.com/file/d/1aIyRZC-4a3VbppYBTwR_KIjWxaeYh5JU/view?usp=sharing" target="_blank">
-        <div class="hover:text-opacity-50 text-white">
-          <h1>Résumé</h1>
-        </div></a>
-  
-
-  <a href="https://www.linkedin.com/in/mdanasca/" target="_blank">
-    <div class="hover:text-opacity-50 text-white">
-      <h1>Let's Connect</h1>
-    </div></a>
-
-
-</div>
-
- </nav>
-
-
- <div class="mt-64 flex gap-36">
- <div class=" text-white space-y-4 md:ml-8">
-
-  <div>
-  <p class="md:text-2xl text-xl">Hola 👋, I’m </p>
-  <h1 class="font-extrabold md:text-6xl text-4xl">Mohammed Anas</h1> </div>
-  <p class="md:text-2xl text-xl text-slate-400 ">— product designer striving to humanize digital products. Currently <br> working as a Product Designer II at <span> <a class="hover:text-white underline" href="https://www.chargebee.com" target="_blank">Chargebee.</a> </span></p>
-
-
- </div>
-
- <div class="hidden md:block">
-  <div class="bg-gray-50  flex items-center justify-center px-16 mt-40 ">
-    <div class="relative w-full max-w-lg">
-      <div class="absolute top-0 -left-4 w-64 h-64 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full  filter blur-3xl opacity-100 animate-blob"></div>
-      <div class="absolute top-0 -right-4 w-40 h-40 bg-gradient-to-r from-lime-500 via-green-600 to-blue-700 rounded-full  filter blur-3xl  opacity-100 animate-blob animation-delay-2000"></div>
-      <div class="absolute -bottom-8 left-20 w-52 h-52 bg-gradient-to-r from-orange-500 via-violet-500 to-blue-700 rounded-full  filter blur-3xl opacity-100 animate-blob animation-delay-4000"></div>
-      
-      
+        </div>
     </div>
-  </div>
-  
- </div>
+        <script>
+            /*function test(obj)
+            {
+                obj.style.backgroundColor = "#f3e8ff";
+            }*/
+        function mainApp() {
 
-</div>
+            const heroDiv = document.querySelector('#hero');
+            const questionsDiv = document.querySelector('#questions');
+            const heroTitle = document.querySelector('#herotitle');
+            const heroTitleImg = document.querySelector('#herotitle img');
+            const letsBegin = document.querySelector('#letsbegin');
+            
+            
+
+            return {
+                beginButton: true,
+                showButton: true,
+                survey: true,
+                question1: false,
+                question2: false,
+                question3: false,
+                question4: false,
+                thanks: false,
+                welcometext: true,
+                question5_1: false,
+                question5_2: false,
+                question5_3: false,
+                question5_4: false,
+                question5_5: false,
+                submitbutton: false,
+
+            init(){
+            this.$watch('question1', value => {
+                            this.question1 = value;       
+
+                        });
+
+            this.$watch('question2', value => {
+                            this.question2 = value;
+                            
+                        });
+
+            this.$watch('question3', value => {
+                            this.question3 = value;
+                            
+                        });
+
+            this.$watch('question4', value => {
+                            this.question4 = value;
+                            questionsDiv.classList.add("pb-44");
+                            
+                        });
+
+            this.$watch('question5_1', value => {
+                            this.question5_1 = value;
+                            console.log(this.question5_1);
+                            if(this.question5_1==true)
+                            {
+                                this.submitbutton=true;
+                            }
+                        });
+
+            this.$watch('question5_2', value => {
+                            this.question5_2 = value;
+                            console.log(this.question5_2);
+                            if(this.question5_2==true)
+                            {
+                                this.submitbutton=true;
+                            }
+                        });
+
+            this.$watch('question5_3', value => {
+                            this.question5_3 = value;
+                            console.log(this.question5_3);
+                            if(this.question5_3==true)
+                            {
+                                this.submitbutton=true;
+                            }
+                        });
+
+            this.$watch('question5_4', value => {
+                            this.question5_4 = value;
+                            console.log(this.question5_4);
+                            if(this.question5_4==true)
+                            {
+                                this.submitbutton=true;
+                            }
+                        });
+
+            this.$watch('question5_5', value => {
+                            this.question5_5 = value;
+                            console.log(this.question5_5);
+                            if(this.question5_5==true)
+                            {
+                                this.submitbutton=true;
+                            }
+                        });
+
+            },
+
+            onClickBegin(){
+                //letsBegin.classList.remove("bottom-8");
+                //letsBegin.classList.add("-bottom-16");
+                //letsBegin.classList.remove("absolute");
+                //letsBegin.classList.add("fixed");
+                //letsBegin.classList.add("-bottom-12");
+
+                letsBegin.classList.add("-bottom-20");
+                setTimeout(()=>{heroDiv.classList.remove("h-screen");
+                heroDiv.classList.add("h-24");
+                heroDiv.classList.add("sticky");
+                this.beginButton = false;
+                heroTitle.classList.add("flex");
+                this.welcometext = false;
+                heroTitle.classList.add("items-center");
+                heroTitleImg.classList.remove("mt-6");
+                questionsDiv.classList.add("pb-36");},500)
+
+                
+                
+
+            },
+
+            onClickSubmit(){
+                this.thanks=true;
+                this.submitbutton=false;
+                
+                //this.window.location.href="#nextsteps"
+                this.survey=false;
 
 
+            }
 
-
-
-
-
-</body>
-  
-
+        }
+      }
+    </script>
+    </body>
 </html>
