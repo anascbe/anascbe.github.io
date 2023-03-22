@@ -1248,6 +1248,14 @@ input:checked + .toggle-bg {
   margin-right: 0.5rem;
 }
 
+.mt-40 {
+  margin-top: 10rem;
+}
+
+.mt-48 {
+  margin-top: 12rem;
+}
+
 .block {
   display: block;
 }
@@ -2747,6 +2755,10 @@ input:checked + .toggle-bg {
     margin-right: 0.75rem;
   }
 
+  .md\:mt-48 {
+    margin-top: 12rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2809,6 +2821,10 @@ input:checked + .toggle-bg {
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:flex-row {
