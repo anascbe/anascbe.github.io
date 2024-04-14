@@ -703,6 +703,10 @@ video {
   height: 2.5rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -776,8 +780,14 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.cursor-none {
-  cursor: none;
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .list-inside {
@@ -928,6 +938,11 @@ video {
 .border-zinc-200 {
   --tw-border-opacity: 1;
   border-color: rgb(228 228 231 / var(--tw-border-opacity));
+}
+
+.border-neutral-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 229 / var(--tw-border-opacity));
 }
 
 .bg-\[\] {
@@ -1135,8 +1150,20 @@ video {
   font-family: EB Garamond, serif;
 }
 
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.font-geist {
+  font-family: Geist, sans;
+}
+
+.font-geist_mono {
+  font-family: Geist Mono, mono;
 }
 
 .text-2xl {
@@ -1278,6 +1305,21 @@ video {
   color: rgb(39 39 42 / var(--tw-text-opacity));
 }
 
+.text-neutral-800 {
+  --tw-text-opacity: 1;
+  color: rgb(38 38 38 / var(--tw-text-opacity));
+}
+
+.text-neutral-600 {
+  --tw-text-opacity: 1;
+  color: rgb(82 82 82 / var(--tw-text-opacity));
+}
+
+.text-neutral-500 {
+  --tw-text-opacity: 1;
+  color: rgb(115 115 115 / var(--tw-text-opacity));
+}
+
 .text-opacity-80 {
   --tw-text-opacity: 0.8;
 }
@@ -1288,6 +1330,10 @@ video {
 
 .decoration-gray-300 {
   text-decoration-color: #d1d5db;
+}
+
+.decoration-neutral-300 {
+  text-decoration-color: #d4d4d4;
 }
 
 .antialiased {
@@ -1343,6 +1389,10 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.delay-500 {
+  transition-delay: 500ms;
 }
 
 .duration-1000 {
@@ -1419,6 +1469,11 @@ video {
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-neutral-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
 .hover\:text-\[\#7333DD\]:hover {
   --tw-text-opacity: 1;
   color: rgb(115 51 221 / var(--tw-text-opacity));
@@ -1434,6 +1489,11 @@ video {
   color: rgb(7 89 133 / var(--tw-text-opacity));
 }
 
+.hover\:text-neutral-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(23 23 23 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -1444,6 +1504,10 @@ video {
 
 .hover\:decoration-gray-300:hover {
   text-decoration-color: #d1d5db;
+}
+
+.hover\:decoration-neutral-300:hover {
+  text-decoration-color: #d4d4d4;
 }
 
 .focus\:outline-none:focus {
@@ -1721,3 +1785,4 @@ video {
     }
   }
 }
+
