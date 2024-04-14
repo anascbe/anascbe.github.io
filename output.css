@@ -1161,12 +1161,12 @@ video {
 
   /* Geist Sans class */
   .geist-sans {
-    font-family: 'GeistSans', sans-serif;
+    font-family: 'geist-sans', sans-serif;
   }
 
   /* Geist Mono class */
   .geist-mono {
-    font-family: 'GeistMono', monospace;
+    font-family: 'geist-mono', monospace;
   }
 
 .text-2xl {
