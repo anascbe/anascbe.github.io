@@ -1158,13 +1158,21 @@ video {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-geist {
-  font-family: Geist, sans;
+
+/* Geist Sans */
+@font-face {
+  font-family: 'geist-sans';
+  src: url('./fonts/geist-sans.woff2') format('woff2'),
+       url('./fonts/geist-sans.woff') format('woff');
 }
 
-.font-geist_mono {
-  font-family: Geist Mono, mono;
+/* Geist Mono */
+@font-face {
+  font-family: 'geist-mono';
+  src: url('./fonts/geist-mono.woff2') format('woff2'),
+       url('./fonts/geist-mono.woff') format('woff');
 }
+
 
 .text-2xl {
   font-size: 1.5rem;
