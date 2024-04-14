@@ -1159,6 +1159,15 @@ video {
 }
 
 
+  /* Geist Sans class */
+  .geist-sans {
+    font-family: 'GeistSans', sans-serif;
+  }
+
+  /* Geist Mono class */
+  .geist-mono {
+    font-family: 'GeistMono', monospace;
+  }
 
 .text-2xl {
   font-size: 1.5rem;
