@@ -1,0 +1,13 @@
+/* Geist Sans */
+@font-face {
+  font-family: 'geist-sans';
+  src: url('fonts/geist-sans.woff2') format('woff2'),
+       url('fonts/geist-sans.woff') format('woff');
+}
+
+/* Geist Mono */
+@font-face {
+  font-family: 'geist-mono';
+  src: url('fonts/geist-mono.woff2') format('woff2'),
+       url('fonts/geist-mono.woff') format('woff');
+}
