@@ -1235,11 +1235,11 @@ video {
 }
 
 .geist-sans {
-  font-family: Geist, sans-serif;
+  font-family: geist-sans, sans-serif;
 }
 
 .geist-mono {
-  font-family: Geist Mono, monospace;
+  font-family: geist-mono, monospace;
 }
 
 .text-2xl {
