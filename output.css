@@ -1234,12 +1234,12 @@ video {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-geist {
-  font-family: Geist, sans;
+.geist-sans {
+  font-family: Geist, sans-serif;
 }
 
-.font-geist_mono {
-  font-family: Geist Mono, mono;
+.geist-mono {
+  font-family: Geist Mono, monospace;
 }
 
 .text-2xl {
