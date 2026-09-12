@@ -1,154 +1,112 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link href="output.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css" /> -->
-  <link rel="icon" type="image/x-icon" href="img/favicon.png">
-  <link rel="stylesheet" href="geist-fonts.css">
-  <title>Anas, Product Designer</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Mohammed Anas is a Senior Product Experience Designer at Dynatrace." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Mohammed Anas — Product Experience Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,600&amp;family=Geist+Mono:wght@400&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/anas-logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="backdrop.js" defer></script>
+    <script src="rail-hint.js" defer></script>
+  </head>
+  <body>
+    <canvas class="line-field" aria-hidden="true"></canvas>
 
-  <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
+    <main class="portfolio">
+      <header class="site-header">
+        <a class="logo-link" href="#top" aria-label="Back to the top">
+          <img class="logo" src="assets/anas-logo.svg" alt="" width="48" height="48" />
+        </a>
+      </header>
 
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CL9NCFR9M5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      <section class="introduction" id="top" aria-labelledby="name">
+        <div class="identity">
+          <h1 id="name">Mohammed Anas</h1>
+          <p class="role">Senior Product Experience Designer @Dynatrace</p>
+        </div>
 
-  gtag('config', 'G-CL9NCFR9M5');
-</script>
+        <div class="bio">
+          <p>Currently, rethinking how configuration works at <a href="https://www.dynatrace.com/" target="_blank" rel="noreferrer">Dynatrace</a>, informed by research and AI-first design practices.</p>
+          <p>Previously, I’ve worked on products at <a href="https://www.paytm.com/" target="_blank" rel="noreferrer">Paytm</a>, <a href="https://www.chargebee.com/" target="_blank" rel="noreferrer">Chargebee</a>, and a handful of startups.</p>
+        </div>
 
-<body class="flex flex-col mx-auto max-w-2xl min-w-xl px-8 py-24 geist-sans antialiased" >
+        <p class="about-link">You can learn more about me <a href="#about">here.</a></p>
+      </section>
 
-<div class="space-y-12">
+      <div class="divider" aria-hidden="true"></div>
 
-<img src="img/anas_logo.svg" alt="anas" class="h-12 w-auto animate-pulse duration-1000		" draggable="false">
+      <section class="work" aria-labelledby="selected-work">
+        <div class="work-heading-row">
+          <h2 class="section-heading" id="selected-work">Selected works</h2>
+          <span class="rail-hint" aria-hidden="true">Scroll →</span>
+        </div>
 
-<p class="text-lg antialiased text-neutral-800">I’m Anas, a software designer crafting tailored experiences for digital products. Currently, I’m a Senior Product Designer at <span class="text-neutral-500 underline decoration-neutral-300 hover:text-neutral-900 hover:bg-neutral-100 hover:no-underline"> <a href="https://www.dynatrace.com" target="_blank">Dynatrace.</a></span><br>
+        <div class="project-rail" aria-label="Selected projects">
+          <article class="project-card">
+            <a class="project-link" href="paytm.html">
+              <img src="assets/paytm-preview.png" alt="Paytm Mutual Fund mobile product interface" width="608" height="343" />
+              <div class="project-caption">
+                <h3>Simplifying Mutual Funds for the Indian Investor</h3>
+                <p>Paytm <span aria-hidden="true">-</span> 2023</p>
+              </div>
+            </a>
+          </article>
 
+          <article class="project-card">
+            <a class="project-link" href="chargebee-reports.html">
+              <img src="assets/reports-preview.png" alt="Chargebee reporting dashboard interface" width="608" height="343" loading="lazy" />
+              <div class="project-caption">
+                <h3>Improving the Reports Exploration and Consumption Experience</h3>
+                <p>Chargebee <span aria-hidden="true">-</span> 2022-23</p>
+              </div>
+            </a>
+          </article>
 
- <br> In the past, I’ve designed products for companies such as <span class="text-neutral-500 underline decoration-neutral-300 hover:text-neutral-900 hover:bg-neutral-100 hover:no-underline"> <a href="https://www.paytm.com" target="_blank">Paytm,</a></span><span class="text-neutral-500 underline decoration-neutral-300 hover:text-neutral-900 hover:bg-neutral-100 hover:no-underline"> <a href="https://www.chargebee.com" target="_blank">Chargebee</a></span> and a handful of startups. </p>
+          <article class="project-card">
+            <a class="project-link" href="https://www.figma.com/proto/v67BYHNNQUIuxwsG9lFf2A/Case-Study---Table-Components?node-id=411%3A2&amp;scaling=contain&amp;page-id=0%3A1&amp;starting-point-node-id=411%3A2" target="_blank" rel="noreferrer">
+              <img src="assets/data-table-preview.png" alt="Unified data table design system component" width="608" height="343" loading="lazy" />
+              <div class="project-caption">
+                <h3>Designing the Unified Data Table Component for the Design System</h3>
+                <p>Chargebee <span aria-hidden="true">-</span> 2023</p>
+              </div>
+            </a>
+          </article>
 
- <div class="flex space-x-8">
+          <article class="project-card">
+            <a class="project-link" href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiR1kvZ25GSTNhSnlMUlUrdVlSY2FJVVZSY1dCVGkzUUw4NFlRZnNGOVVBd29HUnVHdENXaURTMlZKZ0FJWVFvTDdwSHdaZk50TVd0bUtmSzVzaG5GYm8xK0xCeC96ZjVxK1lrUVhzb0l6NHE0VjM2cWRvbUlrUXhiV2g5MXNvbTZ3M0dlM08yVkRSelhFOVZDZFl6bGN1TTJDQVkyYTdpTGRmWElsYWxYRlN0alBjL3VoSDNnaHJWblJaZjBSbDd6YWNjU2xPaFJzQWFFSHF0b2NqUTI1Q1ZPUWpDSFBaNHFGUjRrY0llMkRpZzBUVnIzNytvQ3ZCK3NUSXBHdzNGM1F0NU5kRkJLakN3bDZ0R1JmTktHSGttOXVxc1JxK1lxWXhPelg4UmNsT0IzQlE9PSIsInMiOiJyU1orT0RjcjZyS1pLdTF5SzZjS3lBPT0iLCJpIjoiRkNoQnBCZ0lGY2ZlbjJ3ZyJ9" target="_blank" rel="noreferrer">
+              <img src="assets/revenuestory-preview.png" alt="RevenueStory product interface" width="608" height="343" loading="lazy" />
+              <div class="project-caption">
+                <h3>Improving Conversion for RevenueStory Paid Plans</h3>
+                <p>Chargebee <span aria-hidden="true">-</span> 2023</p>
+              </div>
+            </a>
+          </article>
 
-  <p class="text-lg antialiased text-neutral-500 underline decoration-neutral-300 hover:text-neutral-900 hover:bg-neutral-100 hover:no-underline"> <a href="https://www.linkedin.com/in/mdanasca/" target="_blank">LinkedIn</a></p>
+          <article class="project-card">
+            <a class="project-link" href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoicnMycThBQ1lRTzhQNlpndldyam5wa2tmRFpneWVJUzRCQ3hqSWZDa1dGTWx1WndzVVBGUmhJQU5Ic1pzSDJuREp3Ui84WHdaankwNEhmM2NqMFM0MzNIQWJqRHFZNWNvSXZjeUczcVpaQ1lHOVl5V2JPbWhTRzU1Uk9VNE81d1V3M0ZhUG1EKyIsImkiOiJObWZVUDVMVy9CTjNFdEJXIn0=" target="_blank" rel="noreferrer">
+              <img src="assets/matchmove-preview.png" alt="MatchMove white-label wallet and card interface" width="608" height="343" loading="lazy" />
+              <div class="project-caption">
+                <h3>Designing White-labeled Wallet and Card Solutions for Businesses</h3>
+                <p>MatchMove <span aria-hidden="true">-</span> 2021</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
 
-  <p class="text-lg antialiased text-neutral-500 underline decoration-neutral-300 hover:text-neutral-900 hover:bg-neutral-100 hover:no-underline"> <a href="https://twitter.com/anas_cbe" target="_blank">Twitter</a></p>
-
-  <p class="text-lg antialiased text-neutral-500 underline decoration-neutral-300 hover:text-neutral-900 hover:bg-neutral-100 hover:no-underline"> <a href="https://read.cv/mdanas" target="_blank">CV</a></p>
-
- </div>
-
- <div class="border-t border-neutral-200 w-full"></div>
-
-
- <div class="space-y-16 geist-sans">
-
-
-  <div class="hover:scale-105 ease-in-out duration-1000">
-
-    <a href="paytm.html" >
-
-    <img src="img/PYTM-min.png" draggable="false" class="w-full h-auto pb-4" alt="">
-
-    <div class="grid justify-between w-full">
-        <p class="text-lg antialiased  hover:underline hover:decoration-neutral-300">Simplifying Mutual Funds for the Indian Investor</p>
-        <p class="text-base antialiased text-neutral-500 geist-mono">Paytm - 2023</p>
-
-    </div>
-
-  </a>
-
-</div>
-
-
-<div class="hover:scale-105 ease-in-out duration-1000">
-  <a href="chargebee_rs.html">
-
-     <img src="img/RS-min.png" draggable="false" class="w-full h-auto pb-4" alt=""> 
-
-    <div class="grid justify-between w-full">
-      
-        <p class="text-lg antialiased  hover:underline hover:decoration-neutral-300">Improving the Reports Exploration and Consumption Experience</p>
-        <p class="text-base antialiased text-neutral-500 geist-mono">Chargebee - 2022-23</p>
-
-    </div>
-
-  </a>
-</div>
-
-
-<div class="hover:scale-105 ease-in-out duration-1000">
-  <a href="https://www.figma.com/proto/v67BYHNNQUIuxwsG9lFf2A/Case-Study---Table-Components?node-id=411%3A2&scaling=contain&page-id=0%3A1&starting-point-node-id=411%3A2" target="_blank">
-
-    <img src="img/DT-min.png" draggable="false" class="w-full h-auto pb-4" alt="">
-
-    <div class="grid justify-between w-full">
-        <p class="text-lg antialiased hover:underline hover:decoration-neutral-300">Designing the Unified Data Table Component for the Design System</p>
-        <p class="text-base antialiased text-neutral-500 geist-mono">Chargebee - 2023</p>
-
-    </div>
-
-  </a>
-
-</div>
-
-
-
-<div class="hover:scale-105 ease-in-out duration-1000">
-  <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiR1kvZ25GSTNhSnlMUlUrdVlSY2FJVVZSY1dCVGkzUUw4NFlRZnNGOVVBd29HUnVHdENXaURTMlZKZ0FJWVFvTDdwSHdaZk50TVd0bUtmSzVzaG5GYm8xK0xCeC96ZjVxK1lrUVhzb0l6NHE0VjM2cWRvbUlrUXhiV2g5MXNvbTZ3M0dlM08yVkRSelhFOVZDZFl6bGN1TTJDQVkyYTdpTGRmWElsYWxYRlN0alBjL3VoSDNnaHJWblJaZjBSbDd6YWNjU2xPaFJzQWFFSHF0b2NqUTI1Q1ZPUWpDSFBaNHFGUjRrY0llMkRpZzBUVnIzNytvQ3ZCK3NUSXBHdzNGM1F0NU5kRkJLakN3bDZ0R1JmTktHSGttOXVxc1JxK1lxWXhPelg4UmNsT0IzQlE9PSIsInMiOiJyU1orT0RjcjZyS1pLdTF5SzZjS3lBPT0iLCJpIjoiRkNoQnBCZ0lGY2ZlbjJ3ZyJ9" target="_blank">
-
-    <img src="img/PLG-min.png" draggable="false" class="w-full h-auto pb-4" alt="">
-
-    <div class=" grid justify-between w-full">
-        <p class="text-lg antialiased hover:underline hover:decoration-neutral-300">Improving Conversion for RevenueStory Paid Plans</p>
-        <p class="text-base antialiased text-neutral-500 geist-mono">Chargebee - 2023</p>
-
-    </div>
-
-  </a>
-
-</div>
-
-<div class="hover:scale-105 ease-in-out duration-1000">
- 
-<a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoicnMycThBQ1lRTzhQNlpndldyam5wa2tmRFpneWVJUzRCQ3hqSWZDa1dGTWx1WndzVVBGUmhJQU5Ic1pzSDJuREp3Ui84WHdaankwNEhmM2NqMFM0MzNIQWJqRHFZNWNvSXZjeUczcVpaQ1lHOVl5V2JPbWhTRzU1Uk9VNE81d1V3M0ZhUG1EKyIsImkiOiJObWZVUDVMVy9CTjNFdEJXIn0=" target="_blank">
-
-    <img src="img/MM-min.png" draggable="false" class="w-full h-auto pb-4" alt="">
-
-    <div class="grid justify-between w-full">
-        <p class="text-lg antialiased hover:underline hover:decoration-neutral-300">Designing White-labeled Wallet and Card Solutions for Businesses</p>
-        <p class="text-base antialiased text-neutral-500 geist-mono">MatchMove - 2021</p>
-
-    </div>
-
-  </a>
-
-</div>
-
-
-
- </div>
-    
-      
-</div>
-
-
-      
-    
-
-
-
-
-
-        
-      
-    
-   
-
-</body>
+      <footer class="site-footer">
+        <nav class="social-links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/mdanasca/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://twitter.com/anas_cbe" target="_blank" rel="noreferrer">Twitter</a>
+          <a href="https://github.com/anascbe" target="_blank" rel="noreferrer">Github</a>
+          <a href="#cv">CV</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
 </html>
